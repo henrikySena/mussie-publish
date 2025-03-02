@@ -1,0 +1,613 @@
+/*
+PALETA DE CORES
+
+Cereja: #7c1f31
+Lua nova: #1e1e1e 
+
+
+
+FONTES
+300 LIGHT
+400 REGULAR
+700 BOLD
+
+*/
+
+
+:root {
+    --main-color: #7c1f31; 
+    --second-main-color: #a73c51;
+
+    --bg-color: #1e1e1e
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 400; /* regular */
+    position: relative;
+    background-image: url('/mussie/imgs/plano_de_fundo2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em coluna */
+    justify-content: space-between; /* Mantém espaçamento entre os elementos */
+    align-items: center;
+    min-height: 100vh; /* Mantém a altura mínima da viewport */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+/* reseta margens e o padding padrão */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+  
+  html::-webkit-scrollbar{
+    width: 0.35rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: var(--bg-color);
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 10px;
+}
+
+
+/* -------------------------------------------------------------------------------------------------- */
+
+
+/* CABEÇALHO */
+header {
+   background: rgba(0, 0, 0, 0.5);
+   color: white;
+   padding: 1.25rem; /* 20px => 1.25rem */
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding-left: 1.25rem;
+   padding-right: 1.25rem;
+   font-weight: 300;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 1000;
+   backdrop-filter: blur(0.625rem);
+}
+
+/* estilos para a logo */
+.logo {
+   margin-left: 5rem;
+   font-size: 1.3rem;
+   text-decoration: none;
+   font-weight: 400;
+   color: white;
+}
+.logo span {
+   color: var(--second-main-color);
+   font-weight: 700;
+}
+
+/* estilos para o menu de navegação */
+nav ul {
+   margin-right: 2.5rem;
+   list-style-type: none;
+   display: flex;
+}
+
+nav ul li {
+   margin: 0 2.8125rem;
+}
+
+/* opções no hamburguer (menu)*/
+nav ul li a {
+   text-decoration: none;
+   color: white;
+   font-size: 1rem;
+   transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+   color: var(--second-main-color);
+   text-decoration: underline;
+   transition: color 0.5s ease, text-decoration 0.3s ease;
+}
+
+/* estilos para o ícone de menu (hamburguer) */
+.menu {
+   display: none; /* esconde o menu em telas grandes */
+   cursor: pointer;
+}
+
+/* exibe o ícone de menu apenas em telas pequenas | MUDA ELEMENTOS DENTRO DO MODO MOBILE */ 
+@media (max-width: 768px) {
+   .menu {
+       display: block; /* exibe o ícone de menu em telas pequenas */
+   }
+
+   nav ul {
+       display: none; /* esconde a navegação em telas pequenas */
+       flex-direction: column;
+       width: 100%;
+       text-align: center;
+       font-weight: 400; /* regular */
+   }
+
+   nav ul li {
+       padding: 2.5rem;
+       color: white;
+   }
+
+   /* mostra o menu quando a classe 'active' for adicionada */
+   nav.active ul {
+       display: flex;
+   }
+
+   nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 2rem;
+      transition: none;
+   }
+
+   .logo {
+      margin-left: 5rem;
+      font-size: 2.5rem;
+      text-decoration: none;
+      font-weight: 400;
+      color: white;
+   }
+
+}
+
+/* ícone de menu (hamburguer) */
+.menu i {
+    color: white;
+    font-size: 2.5rem;
+    display: block; /* Exibe o ícone */
+    margin-right: 3rem;
+}
+
+.menu i:hover {
+    color: var(--main-color);
+    transition: none;
+}
+
+/* responsividade para telas menores */
+@media(max-width: 990px) {
+   html {
+       font-size: 55.5%;
+   }
+
+   .home {
+       flex-flow: column-reverse;
+       padding: 8rem 0;
+       padding-top: 15rem;
+   }
+}
+
+@media(max-width: 700px) {
+   html {
+       font-size: 50.5%;
+   }
+
+   .home {
+       padding: 8rem 0;
+   }
+
+   section {
+       padding: 1rem;
+   }
+
+   .header {
+       position: fixed;
+       padding: 0;
+   }
+
+   .header .logo,
+   .header .menu {
+       padding: 2.1rem;
+   }
+
+   /* mostra o ícone do menu */
+   .menu i {
+       display: flex;
+   }
+
+   /* ajusta o comportamento da navbar quando 'hamburguer'(menu) quando for clicado */
+   .header .navbar.active {
+       display: grid;
+   }
+
+   .header .navbar {
+       position: absolute;
+       top: 7rem;
+       display: none;
+       text-align: center;
+       justify-content: center;
+       background-color: var(--main-color);
+       width: 100%;
+       gap: 2rem;
+       padding: 1rem;
+   }
+
+   .header .navbar a#home {
+       color: white;
+       text-decoration: none;
+   }
+
+   .header .navbar a {
+       width: 100%;
+       padding: 1rem;
+   }
+
+   /* adciona efeito de hover nos links do menu */
+   .header .navbar a:hover,
+   .header .navbar a#home:hover {
+        padding-inline: 15rem;
+        background-color: white;
+        color: var(--main-color);
+        text-decoration: none;
+        transition : none;
+   }
+}
+
+
+/* -------------------------------------------------------------------------------------------------- */
+
+
+/* DIV DADOS DE CADASTRO */
+
+/* Contêiner principal */
+.form-container {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    width: 60rem;
+    height: 45rem;
+    padding: 5rem;
+    border-radius: 0.625rem;
+    backdrop-filter: blur(0.625rem);
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.13rem solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Área interna para alinhar imagem e campos */
+.form-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: auto;
+    width: 95%;
+    margin-top: -2rem;
+}
+
+/* imagem no topo */
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
+.img-container img {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 6rem;
+    height: 6rem;
+}
+
+/* contêiner das colunas */
+.form-columns {
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    width: 100%;
+}
+
+/* cada coluna ocupa a metade da largura menos a metade do gap */
+.coluna1, .coluna2 {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: calc(50% - 2.5rem);
+}
+
+
+.inupt-padrao {
+    display: flex;
+    flex-direction: column;
+}
+
+.inupt-padrao label, .inupt-phone label {
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 0.8rem;
+    margin-left: 1.5rem;
+}
+
+.inupt-padrao input, .inupt-phone input {
+    font-size: 1rem;
+    font-family: 'Comfortaa', sans-serif;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.9rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+    border: 0.13rem solid white;
+}
+
+/* input DDD e telefone lado a lado */
+.inupt-phone {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.inupt-phone div {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ddd */
+.inupt-phone div:first-child {
+    width: 30%;
+}
+
+/* telefone */
+.inupt-phone div:last-child {
+    width: 70%;
+}
+
+
+/* botão */
+.submit-btn {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 1.3rem;
+    margin-top: 4rem;
+    padding: 1.2rem 9rem;
+    border: none;
+    border-radius: 20rem;
+    background: white;
+    color: rgb(51, 51, 51);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* para quando o botão for clicado */
+.submit-btn:active {
+    background: rgb(255, 255, 255, 0.1);
+    transform: scale(0.95);
+    color: white;
+    border: 0.13rem solid white;
+}
+
+
+@media (max-width: 768px) {
+    .form-container {
+        width: 95%;
+        padding: 3rem;
+        border: 0.3rem solid white;
+        border-radius: 2rem;
+    }
+
+    .form-container {
+        height: auto;
+    }
+
+    .inupt-padrao label, .inupt-phone label {
+        font-size: 2rem;
+    }
+
+    .form-columns {
+        flex-direction: column;
+    }
+
+    .coluna1, .coluna2 {
+        width: 100%;
+        gap: 6rem;
+    }
+
+    .img-container img {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .inupt-padrao input, .inupt-phone input {
+        font-size: 2rem;
+        padding: 2rem;
+        gap: 6rem;
+        border: 0.3rem solid white;
+        border-radius: 2rem;
+    }
+
+    .inupt-phone div:first-child {
+        width: 30%;
+        margin-right: 2rem;
+    }
+
+    .inupt-phone div:last-child {
+        width: 70%;
+    }
+
+    .submit-btn {
+        margin-top: 9rem;
+        margin-bottom: 5rem;
+        padding: 2rem 11rem;
+        font-size: 2.5rem;
+    }
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+
+
+/* FOOTER */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+.footer_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 75rem;
+    margin: auto;
+}
+
+.footer_container div {
+    flex: 1;
+    min-width: 15.625rem;
+    margin: 0.625rem;
+}
+
+.footer_container h3 {
+    color: var(--main-color);
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+}
+
+.footer_container p, .footer_container ul {
+    font-size: 1rem;
+    line-height: 3rem;
+}
+
+.footer_links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer_links ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer_links ul li a:hover {
+    color: var(--main-color);
+}
+
+.footer_social .social_icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer_social .social_icons a i {
+    font-size: 1.875rem;
+    color: white;
+    transition: 0.3s;
+}
+
+.footer_social .social_icons a:hover i {
+    color: var(--main-color);
+}
+
+.footer_social .social_icons img {
+    width: 1.875rem;
+    height: 1.875rem;
+    transition: 0.3s;
+}
+
+.footer_social .social_icons img:hover {
+    transform: scale(1.1);
+}
+
+.footer_bottom {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    border-top: 1px solid var(--main-color);
+    padding-top: 3rem;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .footer_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: none;
+    }
+
+    .footer_container div {
+        min-width: auto;
+        margin: 3rem 0;
+        text-align: center;
+    }
+
+    .footer_container h3 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer_container p, 
+    .footer_container ul {
+        font-size: 2.5rem;
+        line-height: 5rem;
+        font-weight: 300;
+    }
+
+    .footer_links ul {
+        padding: 0;
+        text-align: center;
+    }
+
+    .footer_links ul li {
+        margin-bottom: 1rem;
+    }
+
+    .footer_social .social_icons {
+        gap: 3rem;
+    }
+
+    .footer_social .social_icons a i {
+        font-size: 4rem;
+    }
+
+    .footer_social .social_icons img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .footer_bottom {
+        margin-bottom: 4rem;
+        margin-top: 1rem;
+        padding-top: 5rem;
+        font-size: 2rem;
+        text-align: center;
+    }
+}
