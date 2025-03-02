@@ -289,7 +289,7 @@ nav ul li a:hover {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url('/imgs/plano_de_fundo.png');
+    background-image: url('/mussie-publish/imgs/plano_de_fundo.png');
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat;
@@ -751,7 +751,7 @@ img-slide{
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url('/imgs/plano_de_fundo2.png');
+    background-image: url('/mussie-publish/imgs/plano_de_fundo2.png');
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat;
