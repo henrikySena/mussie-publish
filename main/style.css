@@ -15,7 +15,7 @@ FONTES
 
 
 :root {
-    --main-color: #7c1f31; 
+    --main-color: #044604; 
     --second-main-color: #a73c51;
 
     --bg-color: #1e1e1e
@@ -754,13 +754,17 @@ img-slide{
     padding: 1rem;
     border: 0.3rem solid white;
     border-radius: 7rem;
-    margin: 8rem;
     display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, 0);
     backdrop-filter: blur(5px);
     line-height: 2.5;
+}
+
+.convite_txt p {
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .convite_btn {
